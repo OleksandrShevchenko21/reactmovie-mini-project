@@ -8,6 +8,7 @@
     border-radius: 10px;
     position: relative;
     cursor: pointer;
+
 }
 
 .poster {
@@ -22,8 +23,10 @@ img {
 
 }
 .card-inner {
-    background: dimgray;
+    /*background: dimgray;*/
+    background: firebrick;
     width: 200px;
+    height: 450px;
     margin: 30px;
     padding: 5px;
     border-radius: 10px;
@@ -36,6 +39,7 @@ img {
     color: white;
     border-radius: 10px;
     justify-content: space-between;
+
 }
 .card-info:hover {
     color: black;
@@ -45,6 +49,9 @@ img {
      color: silver;
      display: flex;
      justify-content: space-between;
+
+
+
 
  }
 .card-daterate:hover {

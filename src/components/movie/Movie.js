@@ -19,10 +19,12 @@ const Movie = ({movie}) => {
 
                     <div className="card-info">
                         <h3>{movie.title}</h3>
+
                         <div className="card-daterate">
                             <h4>{movie.release_date}</h4>
                             <h4>{movie.media_type}</h4>
                             <h4>{movie.vote_average}</h4>
+
                         </div>
 
                     </div>
