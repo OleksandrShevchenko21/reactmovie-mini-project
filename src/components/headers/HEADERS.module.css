@@ -12,3 +12,10 @@
     font-size: 20px;
     font-weight: 600;
 }
+.movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width:96%;
+
+}

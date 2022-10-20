@@ -1,2 +1,2 @@
 export * from './MoviesPage';
-export * from './SingleMoviePage';
+export * from './MovieInfoPage';

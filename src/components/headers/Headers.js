@@ -2,6 +2,7 @@ import {Link, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import css from './HEADERS.module.css'
+import {MoviesPage} from "../../pages";
 
 const Headers = () => {
 
