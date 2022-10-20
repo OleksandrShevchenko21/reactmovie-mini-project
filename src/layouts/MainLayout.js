@@ -3,6 +3,7 @@ import {Outlet} from "react-router-dom";
 import {MoviesPage} from "../pages";
 
 
+
 const MainLayout = () => {
 
     return (
@@ -10,6 +11,9 @@ const MainLayout = () => {
             <Headers/>
             {/*<MoviesPage/>*/}
             <Outlet/>
+
+
+
         </div>
     )
 }
