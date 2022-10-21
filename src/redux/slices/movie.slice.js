@@ -6,15 +6,15 @@ const initialState = {
     loading: false,
     error: null,
     movieFromApi: {},
-    moviesBySearch:[]
+    // moviesBySearch:[]
 };
 
 const getAll = createAsyncThunk(
     'movieSlice/getAll',
-    async (_, {rejectWithValue}) => {
+    async ({page}, {rejectWithValue}) => {
 
         try {
-            const {data} = await movieService.getAll();
+            const {data} = await movieService.getAll(page);
             return data.results
         } catch (e) {
             return rejectWithValue(e.response.data)
@@ -33,18 +33,31 @@ const getById = createAsyncThunk(
         }
     }
 );
-const getBySearch = createAsyncThunk(
-    'movieSlice/getBySearch',
-    async (term, {rejectWithValue}) => {
+// const getBySearch = createAsyncThunk(
+//     'movieSlice/getBySearch',
+//     async (term, {rejectWithValue}) => {
+//
+//         try {
+//             const {data} = await movieService.getBySearch(term);
+//             return data
+//         } catch (e) {
+//             return rejectWithValue(e.response.data)
+//         }
+//     }
+// );
 
-        try {
-            const {data} = await movieService.getBySearch(term);
-            return data
-        } catch (e) {
-            return rejectWithValue(e.response.data)
-        }
-    }
-);
+// const getByGenres = createAsyncThunk(
+//     'movieSlice/getAll',
+//     async (_, {rejectWithValue}) => {
+//
+//         try {
+//             const {data} = await movieService.getByGenres();
+//             return data
+//         } catch (e) {
+//             return rejectWithValue(e.response.data)
+//         }
+//     }
+// );
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -66,9 +79,9 @@ const movieSlice = createSlice({
             .addCase(getById.fulfilled, (state, action) => {
                 state.movieFromApi = action.payload
             })
-            .addCase(getBySearch.fulfilled, (state, action) => {
-                state.moviesBySearch = action.payload
-            })
+            // .addCase(getBySearch.fulfilled, (state, action) => {
+            //     state.moviesBySearch = action.payload
+            // })
 });
 
 const{reducer:movieReducer, actions} = movieSlice;
@@ -76,7 +89,7 @@ const{reducer:movieReducer, actions} = movieSlice;
 const movieActions = {
     getAll,
     getById,
-    getBySearch
+    // getBySearch
 
 }
 

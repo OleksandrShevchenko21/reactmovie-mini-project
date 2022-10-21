@@ -19,7 +19,7 @@ function App()  {
                 <Route path={'/'} element={<MainLayout/>}>
                     <Route path={'/movie/'} element={<MoviesPage/>}/>
                     <Route path={'/movie/:id'} element={<MovieInfo/>}/>
-                    <Route path={'/find/:term'} element={<MoviesBySearch/>}/>
+                    {/*<Route path={'/find/:term'} element={<MoviesBySearch/>}/>*/}
 
 
                 </Route>
