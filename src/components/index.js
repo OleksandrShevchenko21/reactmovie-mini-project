@@ -4,4 +4,4 @@ export * from './headers/Headers';
 export * from './movieInfo/MovieInfo';
 export * from './movies/MoviesBySearch';
 export * from './movie/MovieBySearch';
-// export * from './pagination/Pagination';
+// export * from './pagination/CustomPagination';

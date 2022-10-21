@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import css from './HEADERS.module.css'
 import {MoviesPage} from "../../pages";
 import {movieActions} from "../../redux";
+import {Genres} from "../genres/Genres";
 
 const Headers = () => {
     // const[term,setTerm]=useState("");
@@ -15,6 +16,7 @@ const Headers = () => {
     //         }
 
     return (
+        <div>
 
         <div className={css.headers}>
 
@@ -22,30 +24,21 @@ const Headers = () => {
                     <Link to='/'>MovieHeader</Link>
                 </div>
 
-            {/*<div className={css.searchbar}>*/}
+                    <Link to={'movie'}>
+                        <div className={css.text}>Movies</div>
+                    </Link>
+                    <Link to={'movie'}>
+                        <div className={css.text}>Search</div>
+                    </Link>
 
-            {/*    <form className={css.form}*/}
-            {/*          onSubmit={submitHandler}>*/}
-            {/*        <input type="text"*/}
-            {/*               value={term}*/}
-            {/*               placeholder="Search Movies"*/}
-            {/*               onChange={(e) =>setTerm(e.target.value)}/>*/}
+        </div>
+            <div className={css.text}>
+                        {/*<Link to={'genres'}>*/}
+                           <Genres/>
+                        {/*</Link>*/}
 
-            {/*        <button className={css.button}*/}
-            {/*        onClick={(term) => dispatch(movieActions.getBySearch({term}))}*/}
-            {/*                type= "submit"><i className="search-button"></i>*/}
-            {/*        </button>*/}
-            {/*    </form>*/}
-            {/*</div>*/}
+            </div>
 
-            <Link to={'movie'}>
-                <div className={css.text}>Movies</div>
-            </Link>
-            <Link to={'movie'}>
-                <div className={css.text}>Search</div>
-            </Link>
-
-            {/*<div>{movieInfo && (<div>{movieInfo.title}</div>)}</div>*/}
         </div>
     )
 }

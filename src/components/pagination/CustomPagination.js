@@ -1,8 +1,12 @@
+// import {Pagination} from "@mui/material";
+//
+//
+//
 // export default function CustomPagination({ setPage, numOfPages = 10 }) {
 //     // Scroll to top when page changes
 //     const handlePageChange = (page) => {
 //         setPage(page);
-//         window.scroll(0, 0);
+//         // window.scroll(0, 0);
 //     };
 //
 //     return (

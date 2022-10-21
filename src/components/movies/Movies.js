@@ -13,16 +13,13 @@ const Movies = () => {
     const dispatch = useDispatch();
     const {movies,errors, loading} = useSelector(state => state.movieReducer);
 
-    // const [prev, setPrev] = useState(1);
-    // const [next, setNext] = useState(1);
 
     const [query, setQuery] = useSearchParams({page:'1'});
 
-     useEffect(() => {
+    useEffect(() => {
 
         dispatch(movieActions.getAll({page:query.get('page')}))
-// setPrev(prev)
-// setNext(next)
+
 
     }, [query])
     const prevPage = () => {
@@ -35,16 +32,16 @@ const Movies = () => {
     return (
         <div >
             <div className="movie-list">
-                 {loading && <h1>Loading..............</h1>}
-                 {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
-                 {/*{movieFromAPI.map(movieInfo => <MovieInfo key={movieInfo.id} movieInfo={movieInfo}/>)}*/}
+                {loading && <h1>Loading..............</h1>}
+                {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+                {/*{movieFromAPI.map(movieInfo => <MovieInfo key={movieInfo.id} movieInfo={movieInfo}/>)}*/}
             </div>
 
-            {/*<button disabled={!prev} onClick={prevPage}>prevPage</button>*/}
-            {/*<button disabled={!next} onClick={nextPage}>nextPage</button>*/}
+            <button disabled={+prevPage>1 || +prevPage===1} onClick={prevPage}>prevPage</button>
+            <button disabled={+nextPage===500} onClick={nextPage}>nextPage</button>
 
-            <button  onClick={prevPage}>prevPage</button>
-            <button  onClick={nextPage}>nextPage</button>
+            {/*<button  onClick={prevPage}>prevPage</button>*/}
+            {/*<button  onClick={nextPage}>nextPage</button>*/}
 
         </div>
     )

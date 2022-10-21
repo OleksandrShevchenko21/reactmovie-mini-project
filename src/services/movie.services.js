@@ -5,8 +5,8 @@ import {useState} from "react";
 
 const moviesService = {
 
-    // getAll: (page=1) => axiosService.get(`${urls.movies}?&page=${page}`),
-    getAll: (page=1) => axiosService.get(urls.movies, {params:{page}}),
+    getAll: (page) => axiosService.get(`${urls.movies}?&page=${page}`),
+    // getAll: (page=1) => axiosService.get(urls.movies, {params:{page}}),
     getById:(id) => axiosService.get(`${urls.movie}${id}`),
     // getBySearch: (term) => axiosService.get(`${urls.searchMovies}${term}`)
     getByGenres: () => axiosService.get(urls.genres)
