@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {moviesService as movieService} from "../../services/movie.services";
+import {genresService} from "../../services/genresService";
 
 
 const initialState = {
@@ -8,13 +9,14 @@ const initialState = {
     error: null,
     movieFromApi: {},
     // moviesBySearch:[]
-
+    movieByGenres:[],
+    // setActiveGenre:27
 
 };
 
 const getAll = createAsyncThunk(
     'movieSlice/getAll',
-    async ({page}, {rejectWithValue}) => {
+    async ({page},{rejectWithValue}) => {
 
         try {
             const {data} = await movieService.getAll(page);
@@ -37,6 +39,31 @@ const getById = createAsyncThunk(
         }
     }
 );
+const getByGenres = createAsyncThunk(
+    'movieSlice/getByGenres',
+    async (_, {rejectWithValue}) => {
+
+        try {
+            const {data} = await movieService.getByGenres();
+            return data.results
+        } catch (e) {
+            return rejectWithValue(e.response.data)
+        }
+    }
+);
+
+// const getGenres = createAsyncThunk(
+//     'genreSlice/getGenres',
+//     async (_, {rejectWithValue}) => {
+//
+//         try {
+//             const {data} = await genresService.getGenres();
+//             return data
+//         } catch (e) {
+//             return rejectWithValue(e.response.data)
+//         }
+//     }
+// );
 // const getBySearch = createAsyncThunk(
 //     'movieSlice/getBySearch',
 //     async (term, {rejectWithValue}) => {
@@ -49,19 +76,6 @@ const getById = createAsyncThunk(
 //         }
 //     }
 // );
-
-const getByGenres = createAsyncThunk(
-    'movieSlice/getByGenres',
-    async (_, {rejectWithValue}) => {
-
-        try {
-            const {data} = await movieService.getByGenres();
-            return data
-        } catch (e) {
-            return rejectWithValue(e.response.data)
-        }
-    }
-);
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -83,14 +97,15 @@ const movieSlice = createSlice({
             .addCase(getById.fulfilled, (state, action) => {
                 state.movieFromApi = action.payload
             })
+            .addCase(getByGenres.fulfilled, (state, action) => {
+                state.movieByGenres = action.payload
+            })
             // .addCase(getBySearch.fulfilled, (state, action) => {
             //     state.moviesBySearch = action.payload
             // })
-            .addCase(getByGenres.fulfilled, (state, action) => {
-                state.genres = action.payload
-                state.loading = false
-            })
+
 });
+
 
 const{reducer:movieReducer, actions} = movieSlice;
 
@@ -99,12 +114,9 @@ const movieActions = {
     getById,
     // getBySearch
     getByGenres
-
 }
 
 export{
     movieReducer,
     movieActions,
-
-
 }

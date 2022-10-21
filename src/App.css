@@ -1,7 +1,7 @@
 
 .app {
   min-height: 100vh;
-  background-color: #39445a;
+  /*background-color: #39445a;*/
   color: white;
   padding-top: 10px;
   padding-bottom: 70px;
@@ -17,3 +17,27 @@
     padding-top: 10px;
   }
 }
+
+#light.app{
+  background-color:aliceblue ;
+}
+
+#dark.app{
+  background-color: #39445a;
+}
+.switch{
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+#dark.switch label{
+  color:silver ;
+}
+
+#light.switch label{
+  color: #39445a;
+}
+

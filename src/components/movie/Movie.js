@@ -3,15 +3,18 @@ import css from './Movie.css'
 import {Link} from "react-router-dom";
 import {movieActions} from "../../redux";
 import {useDispatch} from "react-redux";
+import {Badge} from "@mui/material";
 const Movie = ({movie}) => {
     const {id} = movie;
     const dispatch = useDispatch();
 
     return (
         <div className="card-item">
+            <Badge badgeContent = {movie.genre_ids}/>
             <Link to = {`/movie/${movie.id}`}>
 
             <div className="card-inner">
+
                 <div className="poster">
                     <img className={css.poster_path} src={`${posterPreview_300}/${movie.poster_path}`} alt={movie.poster_path}/>
                 </div>
@@ -20,19 +23,15 @@ const Movie = ({movie}) => {
                         <h3>{movie.title}</h3>
 
 
+
                         <div className="card-daterate">
                             <h4>{movie.release_date}</h4>
                             <h4>{movie.media_type}</h4>
                             <h4>{movie.vote_average}</h4>
-
-
                         </div>
-
                     </div>
-
              </div>
-                </Link>
-
+            </Link>
     </div>);
 }
 export {Movie};

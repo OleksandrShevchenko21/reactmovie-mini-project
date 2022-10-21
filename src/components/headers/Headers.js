@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import css from './HEADERS.module.css'
 import {MoviesPage} from "../../pages";
 import {movieActions} from "../../redux";
-import {Genres} from "../genres/Genres";
+
 
 const Headers = () => {
     // const[term,setTerm]=useState("");
@@ -32,12 +32,12 @@ const Headers = () => {
                     </Link>
 
         </div>
-            <div className={css.text}>
+            {/*<div className={css.text}>*/}
                         {/*<Link to={'genres'}>*/}
-                           <Genres/>
+                        {/*   <Genres/>*/}
                         {/*</Link>*/}
 
-            </div>
+            {/*</div>*/}
 
         </div>
     )

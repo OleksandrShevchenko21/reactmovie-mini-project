@@ -1,11 +1,14 @@
 import {axiosService} from "./axios.service";
 import {urls} from "../config";
 import {useState} from "react";
+import useGenre from "../components/useGenre";
+
 
 
 const moviesService = {
 
-    getAll: (page) => axiosService.get(`${urls.movies}?&page=${page}`),
+    // getAll: (page,genre_ids) => axiosService.get(`${urls.movies}?&page=${page}&with_genres=${genre_ids}`),
+    getAll: (page,genreforURL) => axiosService.get(`${urls.movies}?&page=${page}&with_genres=${genreforURL}`),
     // getAll: (page=1) => axiosService.get(urls.movies, {params:{page}}),
     getById:(id) => axiosService.get(`${urls.movie}${id}`),
     // getBySearch: (term) => axiosService.get(`${urls.searchMovies}${term}`)

@@ -1,21 +1,23 @@
 
-/*.genre-item {*/
-/*    !*color: white;*!*/
-/*    display: flex;*/
-/*    border-radius: 10px;*/
-/*    justify-content: space-between;*/
-/*    background: white;*/
+.genre-item {
+    /*color: white;*/
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    background: white;
+    align-items: center;
 
-/*}*/
+}
 
 
 .genre-info {
     height: 30px;
+    width: 100%;
     background: khaki;
     color: black;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     border-radius: 10px;
     cursor: pointer;
     padding: 2px;
