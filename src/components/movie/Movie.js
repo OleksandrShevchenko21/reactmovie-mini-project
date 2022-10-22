@@ -4,9 +4,11 @@ import {Link} from "react-router-dom";
 import {movieActions} from "../../redux";
 import {useDispatch, useSelector} from "react-redux";
 import {Badge} from "@mui/material";
+import {StarsRating} from "../starsRating/StarsRating";
 const Movie = ({movie}) => {
     const {id,genre_ids} = movie;
     const dispatch = useDispatch();
+    const rateByStars=StarsRating(movie.vote_average*0.64)
 
 
     const{genres:data}=useSelector(state=>state.genreReducer)
@@ -40,8 +42,8 @@ const Movie = ({movie}) => {
                         <div className="card-daterate">
                             <h4>{movie.release_date}</h4>
                             <h4>{movie.media_type}</h4>
-                            <h4>{movie.vote_average}</h4>
-                            {/*<h4>{genre.name}</h4>*/}
+                            <h4>{rateByStars}</h4>
+                            {/*<StarsRating/>*/}
                         </div>
                     </div>
              </div>
