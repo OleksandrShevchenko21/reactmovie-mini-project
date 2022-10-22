@@ -10,8 +10,6 @@ const initialState = {
     movieFromApi: {},
     // moviesBySearch:[]
     movieByGenres:[],
-    // setActiveGenre:27
-
 };
 
 const getAll = createAsyncThunk(

@@ -1,4 +1,5 @@
 // import {Pagination} from "@mui/material";
+// import React from "react";
 //
 //
 //
@@ -20,7 +21,9 @@
 //         >
 //
 //                 <Pagination
-//                     onChange={(e) => handlePageChange(e.target.textContent)}
+//                     onChange={(e) => {
+//                         handlePageChange(e.target.textContent)
+//                     }}
 //                     count={numOfPages}
 //                     color="primary"
 //                     hideNextButton

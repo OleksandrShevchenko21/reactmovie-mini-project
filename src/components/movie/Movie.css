@@ -1,14 +1,19 @@
-.card-item {
+/*.card-item {*/
 
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    padding: 5px;
-    margin: 5px 0;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 200px;*/
+/*    padding: 5px;*/
+/*    margin: 5px 0;*/
 
+/*    border-radius: 10px;*/
+/*    position: relative;*/
+/*    cursor: pointer;*/
+/*    background: white;*/
+/*}*/
+
+.card-badge{
+    margin-left: 180px;
 }
 
 .poster {
@@ -58,6 +63,10 @@ img {
 .card-daterate:hover {
     color: black;
     transition: all 0.3s;
+}
+.badgeContent{
+    padding: 10px;
+    margin: 10px;
 }
 
 

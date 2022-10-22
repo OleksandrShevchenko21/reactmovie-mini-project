@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {movieActions} from "../../redux";
-import {posterPreview_300} from "../../posterPreview";
+import { posterPreview_500} from "../../posterPreview";
 
 const MovieInfo = () => {
     const {id} = useParams();
@@ -18,20 +18,33 @@ const MovieInfo = () => {
 
     }, [dispatch, id]);
     return (
-        <div className="card-item">
+        <div className="cardInfo-item">
 
 
-                <div className="card-inner">
-                    <div className="poster">
-                        <img className={css.poster_path} src={`${posterPreview_300}/${movieFromApi.poster_path}`} alt={movieFromApi.poster_path}/>
+                <div className="cardInfo-inner">
+                    <div className="posterInfo">
+                        <img className={css.poster_path} src={`${posterPreview_500}/${movieFromApi.poster_path}`} alt={movieFromApi.poster_path}/>
                     </div>
 
-                    <div className="card-info">
-                        <h3>{movieFromApi.title}</h3>
+                    <div className="cardInfo-info">
 
+                        <div className="cardInfo-title">
 
-                        <div className="card-daterate">
+                            <h4>{movieFromApi.title}</h4>
+                        </div>
+
+                        <div className="cardInfo-tagline">
+
+                            <h4>{movieFromApi.tagline}</h4>
+                        </div>
+
+                        <div className="cardInfo-overview">
+                            <h3>{movieFromApi.overview}</h3>
+                        </div>
+
+                        <div className="cardInfo-daterate">
                             <h4>{movieFromApi.release_date}</h4>
+
                             <h4>{movieFromApi.media_type}</h4>
                             <h4>{movieFromApi.vote_average}</h4>
 
@@ -43,6 +56,7 @@ const MovieInfo = () => {
                 </div>
 
 
-        </div>);
+        </div>
+                    );
 }
 export {MovieInfo};

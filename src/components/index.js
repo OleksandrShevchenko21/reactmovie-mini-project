@@ -6,4 +6,4 @@ export * from './movies/MoviesBySearch';
 export * from './movie/MovieBySearch';
 export * from './moviesByGenres/MoviesByGenres';
 
-// export * from './pagination/CustomPagination';
+export * from './pagination/CustomPagination';
