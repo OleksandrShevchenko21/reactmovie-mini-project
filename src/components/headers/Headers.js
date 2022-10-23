@@ -7,13 +7,13 @@ import {movieActions} from "../../redux";
 
 
 const Headers = () => {
-    // const[term,setTerm]=useState("");
-    // const dispatch = useDispatch();
-    // const submitHandler = (e) =>{
-    //     e.preventDefault();
-    //     console.log(term);
-    //
-    //         }
+    const[term,setTerm]=useState("");
+    const dispatch = useDispatch();
+    const submitHandler = (e) =>{
+        e.preventDefault();
+        console.log(term);
+
+            }
 
     return (
         <div>
@@ -21,7 +21,7 @@ const Headers = () => {
         <div className={css.headers}>
 
                 <div className={css.text}>
-                    <Link to='/'>MovieHeader</Link>
+                    <Link to='/'>Home</Link>
                 </div>
 
                     <Link to={'movie'}>

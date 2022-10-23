@@ -1,6 +1,6 @@
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import  css from './Genre.css'
-import {MoviesByGenres} from "../moviesByGenres/MoviesByGenres";
+
 import {Chip, Link} from "@mui/material";
 import {useEffect} from "react";
 import {genreActions, movieActions} from "../../redux";
@@ -11,13 +11,15 @@ const Genre = ({genre,activeGenre,setActiveGenre,movies,setFiltered}) => {
 
     useEffect(() => {
 
-        if(activeGenre ===0) {
-            setFiltered(movies);
-            return;
-        }
+        // if(activeGenre ===0) {
+        //     setFiltered(movies);
+        //     return;
+        // }
 
-        const filtered = movies.filter((movie)=>movie.genre_ids.includes(activeGenre))
+        const filtered = (movies.filter((movie)=>movie.genre_ids.includes(activeGenre)))
         setFiltered(filtered);
+        // movies.filter((movie)=>movie.genre_ids.includes(activeGenre))
+
     },[activeGenre]);
 
 

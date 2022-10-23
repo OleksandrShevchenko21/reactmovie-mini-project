@@ -4,12 +4,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {movieActions} from "../../redux";
 import { posterPreview_500} from "../../posterPreview";
+import {StarsRating} from "../starsRating/StarsRating";
 
 const MovieInfo = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const {movieFromApi} = useSelector(state => state.movieReducer);
-
+    const rateByStarsInfo=StarsRating(movieFromApi.vote_average*0.64)
 
     useEffect(() => {
         console.log(movieFromApi);
@@ -46,7 +47,7 @@ const MovieInfo = () => {
                             <h4>{movieFromApi.release_date}</h4>
 
                             <h4>{movieFromApi.media_type}</h4>
-                            <h4>{movieFromApi.vote_average}</h4>
+                            <h4>{rateByStarsInfo}</h4>
 
 
                         </div>

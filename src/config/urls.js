@@ -8,8 +8,8 @@ const urls = {
     searchMovies: '/find/',
     genres:'/genre/movie/list'
     // movies : '/discover/movie?api_key=`${apiKey}`&language=en-US',
-    }
-    // `https://api.themoviedb.org/3/discover/movie?api_key=`${apiKey}`&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`
+}
+// `https://api.themoviedb.org/3/discover/movie?api_key=`${apiKey}`&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`
 export {
     baseURL,
     urls,

@@ -23,14 +23,41 @@ const Movie = ({movie}) => {
     })
 
     return (
-        <div className="card-item">
-            <Link to = {`/movie/${movie.id}`}>
+
+
 
             <div className="card-inner">
+                <Link to = {`/movie/${movie.id}`}>
 
             <div className="card-badge">
-            <Badge badgeContent = {genreOfMovie[0]}
-                   color= "primary" />
+
+                <div className="badgeContent0">
+
+                    <Badge badgeContent = {genreOfMovie[0]}
+                        color= "primary"
+                           overlap="circular"
+                           sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
+                    />
+                </div>
+                <div className="badgeContent1">
+
+                    <Badge badgeContent = {genreOfMovie[1]}
+                           color= "primary"
+                           overlap="circular"
+                           sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
+                    />
+                </div>
+                <div className="badgeContent2">
+
+                    <Badge badgeContent = {genreOfMovie[2]}
+                           color= "primary"
+                           overlap="circular"
+                           sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
+                    />
+
+                </div>
+
+
             </div>
                 <div className="poster">
                     <img className={css.poster_path} src={`${posterPreview_300}/${movie.poster_path}`} alt={movie.poster_path}/>
@@ -43,10 +70,9 @@ const Movie = ({movie}) => {
                             <h4>{movie.release_date}</h4>
                             <h4>{movie.media_type}</h4>
                             <h4>{rateByStars}</h4>
-                            {/*<StarsRating/>*/}
                         </div>
                     </div>
-             </div>
+
             </Link>
     </div>);
 }

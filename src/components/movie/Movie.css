@@ -12,9 +12,7 @@
 /*    background: white;*/
 /*}*/
 
-.card-badge{
-    margin-left: 170px;
-}
+
 
 .poster {
     height: 300px;
@@ -29,9 +27,11 @@ img {
 }
 .card-inner {
     /*background: dimgray;*/
+        display: flex;
+        flex-direction: column;
     background: firebrick;
     width: 200px;
-    height: 450px;
+    /*height: 350px;*/
     margin: 30px;
     padding: 5px;
     border-radius: 10px;
@@ -56,17 +56,32 @@ img {
      display: flex;
      justify-content: space-between;
 
-
-
-
  }
 .card-daterate:hover {
     color: black;
     transition: all 0.3s;
 }
-.badgeContent{
-    padding: 10px;
-    margin: 10px;
+
+.card-badge{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 170px;
+    position: relative;
+    top: 80px;
 }
+.badgeContent0{
+    padding: 1px;
+    margin: 2px;
+}
+.badgeContent1{
+    padding: 1px;
+    margin: 2px;
+}
+.badgeContent2{
+    padding: 1px;
+    margin: 2px;
+}
+
 
 

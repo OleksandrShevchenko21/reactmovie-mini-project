@@ -24,8 +24,15 @@ const Movies = () => {
     }, [])
 
     useEffect(() => {
-        dispatch(movieActions.getAll({page:queryPage.get('page')},{activeGenre}))
+
+        if(activeGenre ===0) {
+            setFiltered(movies);
+            return;
+        }
+
+        dispatch(movieActions.getAll({page: queryPage.get('page')},{activeGenre}))
     }, [queryPage,activeGenre])
+
 
 
     const prevPage = () => {
@@ -35,33 +42,28 @@ const Movies = () => {
     const nextPage = () => {
         setQueryPage(value=>({page:+value.get('page')+1}))
         }
+    console.log(movies);
     return (
         <div >
 
-            {/*<button onClick={()=>setActiveGenre(movie.genre_ids[0])}></button>*/}
             <div className="genre-list">
 
-
                 {genres?.genres?.map(genre =>
-                    <Genre key={genre.id}
-                           genre={genre}
-                           activeGenre={activeGenre}
-                           setActiveGenre={setActiveGenre}
-                           setFiltered={setFiltered}
-                           movies={movies}
-                    />
+                    <Genre key={genre.id} genre={genre} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered} movies={movies}/>
                 )}
             </div>
+
             <button onClick={()=>setActiveGenre(0)}>All</button>
+            <button disabled={+prevPage>1 || +prevPage===1} onClick={prevPage}>prevPage</button>
+            <button disabled={+nextPage===500} onClick={nextPage}>nextPage</button>
+
+
             <div className="movie-list">
                 {loading && <h1>Loading..............</h1>}
+                {/*{movies.map(movie => <Movie key={movie.id} movie={movie}/>)}*/}
                 {filtered.map(movie => <Movie key={movie.id} movie={movie}/>)}
 
             </div>
-
-
-            <button disabled={+prevPage>1 || +prevPage===1} onClick={prevPage}>prevPage</button>
-            <button disabled={+nextPage===500} onClick={nextPage}>nextPage</button>
 
         </div>
     )
