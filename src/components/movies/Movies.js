@@ -3,10 +3,8 @@ import {Movie} from "../movie/Movie";
 import {useDispatch, useSelector} from "react-redux";
 import {genreActions, movieActions} from "../../redux";
 import css from './Movies.css'
-import {MovieInfo} from "../movieInfo/MovieInfo";
 import {useSearchParams} from "react-router-dom";
 import {Genre} from "../genre/Genre";
-import {moviesService} from "../../services/movie.services";
 import {FaSearch} from "react-icons/fa";
 
 
@@ -26,22 +24,30 @@ const Movies = () => {
 
     }
 
-    useEffect(() => {
 
+    useEffect(() => {
 
         dispatch(genreActions.getGenres())
 
-        if(activeGenre ===0 && term === null) {
-                dispatch(movieActions.getAll({page: queryPage.get('page')}))
+    }, [])
 
-                } else if (activeGenre!==0){
-                dispatch(movieActions.getAll({page: queryPage.get('page'),activeGenre}))
+    useEffect(() => {
 
-                }
+            if(activeGenre === 0) {
+                    dispatch(movieActions.getAll({page: queryPage.get('page')}))
+
+                    } if (activeGenre!==0){
+                    dispatch(movieActions.getAll({page: queryPage.get('page'),activeGenre}))
+
+                    }
+
+    }, [queryPage,activeGenre])
+
+    useEffect(() => {
 
         dispatch(movieActions.getBySearch({term}))
 
-    }, [queryPage,activeGenre,term])
+    }, [term])
 
 
     console.log(activeGenre);
@@ -54,8 +60,6 @@ const Movies = () => {
     const nextPage = () => {
         setQueryPage(value=>({page:+value.get('page')+1}))
         }
-        console.log(queryPage);
-
 
     return (
         <div>
