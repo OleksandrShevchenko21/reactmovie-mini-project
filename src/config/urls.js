@@ -5,7 +5,8 @@ const apiRequest = 'https://api.themoviedb.org/3/movie/550?api_key=f27f0a26355dd
 const urls = {
     movies : '/discover/movie',
     movie : '/movie/',
-    searchMovies: '/find/',
+    searchMovies: '/search/movie',
+    // searchMovies: '/keyword/',
     genres:'/genre/movie/list'
     // movies : '/discover/movie?api_key=`${apiKey}`&language=en-US',
 }

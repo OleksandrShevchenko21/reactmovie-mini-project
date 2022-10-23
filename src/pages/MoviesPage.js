@@ -1,4 +1,4 @@
-import {Movies} from "../components";
+import {MovieBySearch, Movies, MoviesSearch} from "../components";
 import {Outlet} from "react-router-dom";
 
 const MoviesPage = () => {
@@ -6,6 +6,7 @@ const MoviesPage = () => {
     return (
         <div>
             <Movies/>
+            {/*<MoviesSearch/>*/}
         </div>
 
     )

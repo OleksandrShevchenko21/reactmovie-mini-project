@@ -4,7 +4,6 @@ import {Headers, MovieInfo, Movies, MoviesByGenres} from "./components";
 import {MainLayout} from "./layouts";
 import {MovieInfoPage, MoviesPage} from "./pages";
 import {Route, Routes} from "react-router";
-import {MoviesBySearch} from "./components/movies/MoviesBySearch";
 import {createContext, useState} from "react";
 import ReactSwitch from "react-switch";
 

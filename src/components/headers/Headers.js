@@ -4,16 +4,11 @@ import {useEffect, useState} from "react";
 import css from './HEADERS.module.css'
 import {MoviesPage} from "../../pages";
 import {movieActions} from "../../redux";
+import {MoviesSearch} from "../moviesSearch/MoviesSearch";
 
 
 const Headers = () => {
-    const[term,setTerm]=useState("");
-    const dispatch = useDispatch();
-    const submitHandler = (e) =>{
-        e.preventDefault();
-        console.log(term);
 
-            }
 
     return (
         <div>
@@ -27,17 +22,10 @@ const Headers = () => {
                     <Link to={'movie'}>
                         <div className={css.text}>Movies</div>
                     </Link>
-                    <Link to={'movie'}>
-                        <div className={css.text}>Search</div>
-                    </Link>
+
 
         </div>
-            {/*<div className={css.text}>*/}
-                        {/*<Link to={'genres'}>*/}
-                        {/*   <Genres/>*/}
-                        {/*</Link>*/}
 
-            {/*</div>*/}
 
         </div>
     )
