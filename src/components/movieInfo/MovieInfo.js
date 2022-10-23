@@ -56,7 +56,6 @@ const MovieInfo = () => {
 
                 </div>
 
-
         </div>
                     );
 }

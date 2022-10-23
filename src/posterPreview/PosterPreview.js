@@ -4,6 +4,5 @@ const unavailable = "https://www.movienewz.com/img/films/poster-holder.jpg";
 export {
     posterPreview_300,
     posterPreview_500,
-    unavailable
 }
 

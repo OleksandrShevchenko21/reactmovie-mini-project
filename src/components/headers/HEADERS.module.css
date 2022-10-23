@@ -5,7 +5,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .text{
@@ -21,30 +20,5 @@
     justify-content: space-around;
     width:96%;
 }
-.searchBar {
-    width: 500px;
-    height: 35px;
 
-}
-.form {
-    display: flex;
-    flex-direction: column;
-}
-
-.searchBar input{
-    font-size: 18px;
-    width: 80%;
-    height: 100%;
-    padding: 0px 5px 11px 10px;
-    outline: none;
-}
-
-.searchBar button{
-    cursor: pointer;
-    height: 35px;
-    width: 16%;
-}
-.searchBar FcSearch{
-    font-size: 4px;
-}
 

@@ -6,11 +6,57 @@
 
 }
 
+.pages button{
+    margin: 10px;
+    width: 75px;
+    height: 25px;
+    padding: 1px;
+    border: none;
+    background: gainsboro;
+    border-radius: 20px;
+    border: 2px solid;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+
+}
+.pages button:hover{
+    background: green;
+}
+
+.searchBar {
+    width: 500px;
+    height: 35px;
+margin: 20px;
+    /*margin-left: 70%;*/
+
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBar input{
+    font-size: 18px;
+    width: 80%;
+    height: 100%;
+    /*padding: 0px 5px 11px 10px;*/
+    outline: none;
+}
+
+.searchBar button{
+    cursor: pointer;
+    height: 27px;
+    width: 16%;
+}
+.searchBar FcSearch{
+    font-size: 4px;
+}
+
 .genre-list{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width:96%;
+    width:90%;
 
 }
 .ALL-GENRES button{
@@ -31,23 +77,10 @@
     background: green;
 }
 
-.pages button{
-    margin: 10px;
-    width: 75px;
-    height: 25px;
-    padding: 1px;
-    border: none;
-    background: gainsboro;
-    border-radius: 20px;
-    border: 2px solid;
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
-
+.genres-pages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*background: black;*/
 }
-.pages button:hover{
-    background: green;
-}
-
-
 

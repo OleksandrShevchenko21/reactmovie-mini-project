@@ -5,7 +5,10 @@ import {movieActions} from "../../redux";
 import {useDispatch, useSelector} from "react-redux";
 import {Badge} from "@mui/material";
 import {StarsRating} from "../starsRating/StarsRating";
+
+
 const Movie = ({movie}) => {
+
     const {id,genre_ids} = movie;
     const dispatch = useDispatch();
     const rateByStars=StarsRating(movie.vote_average*0.64)
@@ -24,8 +27,8 @@ const Movie = ({movie}) => {
 
     return (
 
-            <div className="card-inner">
-                <Link to = {`/movie/${movie.id}`}>
+        <div className="card-inner">
+            <Link to = {`/movie/${movie.id}`}>
 
 
                 <div className="poster">
@@ -58,8 +61,8 @@ const Movie = ({movie}) => {
 
                         </div>
 
-
                     </div>
+
                 </div>
 
                     <div className="card-info">
@@ -70,9 +73,10 @@ const Movie = ({movie}) => {
                             <h4>{movie.media_type}</h4>
                             <h4>{rateByStars}</h4>
                         </div>
+
                     </div>
 
             </Link>
-    </div>);
+        </div>);
 }
 export {Movie};
