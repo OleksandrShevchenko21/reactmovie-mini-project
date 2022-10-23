@@ -13,7 +13,8 @@ const Genre = ({genre,activeGenre,setActiveGenre,movies,setFiltered}) => {
         <div className="genre-item">
 
 
-                    <div className="genre-info">
+
+
                         <div className="genre-bottom">
 
                             <Chip
@@ -27,8 +28,6 @@ const Genre = ({genre,activeGenre,setActiveGenre,movies,setFiltered}) => {
                             </Chip>
                         {/*<h5>{genre.id}</h5>*/}
                         </div>
-
-                    </div>
          </div>
 
     )
