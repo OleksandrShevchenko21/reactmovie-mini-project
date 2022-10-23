@@ -61,9 +61,11 @@ const Movies = () => {
             <div className="ALL-GENRES">
                 <button onClick={()=>setActiveGenre(0)}>ALL GENRES</button>
             </div>
-            <button disabled={+prevPage>1 || +prevPage===1} onClick={prevPage}>prevPage</button>
-            <button disabled={+nextPage===500} onClick={nextPage}>nextPage</button>
 
+            <div className="pages">
+                <button disabled={+prevPage>1 || +prevPage===1} onClick={prevPage}>prevPage</button>
+                <button disabled={+nextPage===500} onClick={nextPage}>nextPage</button>
+            </div>
 
             <div className="movie-list">
                 {loading && <h1>Loading..............</h1>}

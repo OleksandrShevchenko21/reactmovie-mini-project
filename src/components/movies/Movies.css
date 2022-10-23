@@ -13,10 +13,38 @@
     width:96%;
 
 }
-.ALL-GENRES-bottom{
-    width: 50px;
-    height: 20px;
-    background: green;
-    border-radius: 5px;
+.ALL-GENRES button{
+    margin: 20px;
+    width: 150px;
+    height: 50px;
+    padding: 1px;
+    border: none;
+    background: cornflowerblue;
+    border-radius: 20px;
+    border: 2px solid;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
 
+}
+.ALL-GENRES button:hover{
+    background: green;
+}
+
+.pages button{
+    margin: 10px;
+    width: 75px;
+    height: 25px;
+    padding: 1px;
+    border: none;
+    background: gainsboro;
+    border-radius: 20px;
+    border: 2px solid;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+
+}
+.pages button:hover{
+    background: green;
 }

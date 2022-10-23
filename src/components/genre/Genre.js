@@ -12,9 +12,6 @@ const Genre = ({genre,activeGenre,setActiveGenre,movies,setFiltered}) => {
     return (
         <div className="genre-item">
 
-
-
-
                         <div className="genre-bottom">
 
                             <Chip

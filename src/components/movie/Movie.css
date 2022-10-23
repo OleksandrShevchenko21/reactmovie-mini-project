@@ -1,18 +1,3 @@
-/*.card-item {*/
-
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    width: 200px;*/
-/*    padding: 5px;*/
-/*    margin: 5px 0;*/
-
-/*    border-radius: 10px;*/
-/*    position: relative;*/
-/*    cursor: pointer;*/
-/*    background: white;*/
-/*}*/
-
-
 
 .poster {
     height: 300px;
@@ -26,7 +11,6 @@ img {
 
 }
 .card-inner {
-    /*background: dimgray;*/
         display: flex;
         flex-direction: column;
     background: firebrick;
@@ -45,11 +29,11 @@ img {
     border-radius: 10px;
     justify-content: space-between;
 
+
 }
 .card-info:hover {
     color: black;
     transition: all 0.3s;
-;
 }
 .card-daterate {
      color: silver;
@@ -68,7 +52,7 @@ img {
     justify-content: space-between;
     margin-left: 170px;
     position: relative;
-    top: 80px;
+    top: -300px;
 }
 .badgeContent0{
     padding: 1px;

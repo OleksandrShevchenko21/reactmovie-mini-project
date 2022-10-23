@@ -24,43 +24,42 @@ const Movie = ({movie}) => {
 
     return (
 
-
-
             <div className="card-inner">
                 <Link to = {`/movie/${movie.id}`}>
 
-            <div className="card-badge">
 
-                <div className="badgeContent0">
-
-                    <Badge badgeContent = {genreOfMovie[0]}
-                        color= "primary"
-                           overlap="circular"
-                           sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
-                    />
-                </div>
-                <div className="badgeContent1">
-
-                    <Badge badgeContent = {genreOfMovie[1]}
-                           color= "primary"
-                           overlap="circular"
-                           sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
-                    />
-                </div>
-                <div className="badgeContent2">
-
-                    <Badge badgeContent = {genreOfMovie[2]}
-                           color= "primary"
-                           overlap="circular"
-                           sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
-                    />
-
-                </div>
-
-
-            </div>
                 <div className="poster">
                     <img className={css.poster_path} src={`${posterPreview_300}/${movie.poster_path}`} alt={movie.poster_path}/>
+                    <div className="card-badge">
+
+                        <div className="badgeContent0">
+
+                            <Badge badgeContent = {genreOfMovie[0]}
+                                   color= "primary"
+                                   overlap="circular"
+                                   sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
+                            />
+                        </div>
+                        <div className="badgeContent1">
+
+                            <Badge badgeContent = {genreOfMovie[1]}
+                                   color= "primary"
+                                   overlap="circular"
+                                   sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
+                            />
+                        </div>
+                        <div className="badgeContent2">
+
+                            <Badge badgeContent = {genreOfMovie[2]}
+                                   color= "primary"
+                                   overlap="circular"
+                                   sx={{ "& .MuiBadge-badge": { fontSize: 12, height: 25, minWidth: 15 } }}
+                            />
+
+                        </div>
+
+
+                    </div>
                 </div>
 
                     <div className="card-info">
