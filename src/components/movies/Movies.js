@@ -6,6 +6,7 @@ import css from './Movies.css'
 import {MovieInfo} from "../movieInfo/MovieInfo";
 import {useSearchParams} from "react-router-dom";
 import {Genre} from "../genre/Genre";
+import {moviesService} from "../../services/movie.services";
 
 
 const Movies = () => {
@@ -24,16 +25,18 @@ const Movies = () => {
     }, [])
 
     useEffect(() => {
-
         if(activeGenre ===0) {
-            setFiltered(movies);
-            return;
-        }
-
-        dispatch(movieActions.getAll({page: queryPage.get('page')},{activeGenre}))
+        dispatch(movieActions.getAll({page: queryPage.get('page')}))
+        }else {
+        dispatch(movieActions.getAll({page: queryPage.get('page'),activeGenre}))
+    }
     }, [queryPage,activeGenre])
 
 
+
+
+    console.log(activeGenre);
+    console.log(filtered);
 
     const prevPage = () => {
         setQueryPage(value=>({page:value.get('page')-1}))
@@ -42,7 +45,9 @@ const Movies = () => {
     const nextPage = () => {
         setQueryPage(value=>({page:+value.get('page')+1}))
         }
-    console.log(movies);
+        console.log(queryPage);
+
+
     return (
         <div >
 
@@ -60,8 +65,8 @@ const Movies = () => {
 
             <div className="movie-list">
                 {loading && <h1>Loading..............</h1>}
-                {/*{movies.map(movie => <Movie key={movie.id} movie={movie}/>)}*/}
-                {filtered.map(movie => <Movie key={movie.id} movie={movie}/>)}
+                {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+                {/*{filtered.map(movie => <Movie key={movie.id} movie={movie}/>)}*/}
 
             </div>
 

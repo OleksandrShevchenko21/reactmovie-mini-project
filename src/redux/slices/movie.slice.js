@@ -9,6 +9,7 @@ const initialState = {
     error: null,
     movieFromApi: {},
     // movieByGenres:[],
+    activeGenre:0
 
 };
 
